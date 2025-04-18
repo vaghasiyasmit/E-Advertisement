@@ -30,7 +30,7 @@ import { UserProfile } from "./Components/user/UserProfile";
 import { ResetPassword } from "./Components/common/ResetPassword";
 // import { AdminDashbord } from "./Components/admin/AdminDashbord";
 import { HoardingBookingDetails } from "./Components/agency/HoardingBookingDetails";
-import AdminDashboard1 from "./Components/admin/AdminDashbord1";
+import { AdminDashboard1 } from "./Components/admin/AdminDashbord1";
 // import { HoardingTable } from "./Components/admin/HoardingTable";
 // import { UserTable } from "./Components/admin/UserTable";
 function App() {
@@ -60,7 +60,7 @@ function App() {
       <Routes>
         <Route path="/login/:status" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        <Route path="/admin" element={<AdminDashboard1></AdminDashboard1>}></Route>
+        
         {/* <Route path="/admin" element={<AdminDashbord></AdminDashbord>}>
         <Route path="hoardingtable" element={<HoardingTable></HoardingTable>}></Route>
         <Route path="users/:type" element={<UserTable></UserTable>}></Route>
@@ -78,6 +78,7 @@ function App() {
 
         <Route element={<PrivateRoutes></PrivateRoutes>}>
           {/* ------------------------------- userRoutes ------------------------------- */}
+          <Route path="/admin" element={<AdminDashboard1></AdminDashboard1>}></Route>
           <Route path="/user/:status" element={<UserSidebar></UserSidebar>}>
             <Route path="profile" element={<UserProfile></UserProfile>}></Route>
             <Route

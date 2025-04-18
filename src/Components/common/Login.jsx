@@ -27,11 +27,17 @@ export const Login = () => {
           setTimeout(() => {
             navigate("/user/loggedin");
           }, 2000);
-        } else {
+        } else if (res.data.data.roleId.name === "Agency") {
           setTimeout(() => {
             navigate("/agency/loggedin");
           }, 2000);
+        } else {
+           setTimeout(() => {
+             navigate("/admin");
+           }, 2000);
+         
         }
+      
       }
     } catch (error) {
       if (error.response.data.message) {
@@ -150,7 +156,7 @@ export const Login = () => {
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input
-              type="text"
+              type="password"
               className="form-control"
               id="password"
               {...register("password", validationSchema.passwordValidator)}
